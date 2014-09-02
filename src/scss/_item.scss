@@ -40,6 +40,16 @@ $item-media-ratio: 3 / 5;
 	}
 }
 
+.item__media-container--cutout {
+    margin-top: -40%; // Headline should resize if item--has-cutout is present on item
+    padding-bottom: 100%;
+
+    .item__image {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 .item__image {
 	display: block;
 	height: auto;
