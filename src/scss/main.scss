@@ -50,8 +50,21 @@ $c-liveAccent: guss-colour(tone-live-2), $pasteup-palette;
 $c-mediaDefault: $c-commentAccent;
 
 
+// just styles for dev display
+$item-width: gs-span(3);
+
 @import "item";
 
 body {
 	background-color: guss-colour(neutral-5, $pasteup-palette);
+}
+
+.items {
+	width: $item-width;
+	float: left;
+	margin-left: $gs-gutter;
+}
+
+.item {
+	margin-bottom: $gs-baseline;
 }
