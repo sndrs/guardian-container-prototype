@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
-@import "../bower_components/sass-mq/_mq";
-@import "../bower_components/guss-css3/_css3";
-@import "../bower_components/guss-rem/_rem";
-@import "../bower_components/guss-grid-system/_grid-system";
-@import "../bower_components/guss-layout/_row";
-@import "../bower_components/guss-layout/_columns";
-@import "../bower_components/guss-webfonts/_webfonts";
-@import "../bower_components/pasteup-palette/_palette";
+@import "../../bower_components/sass-mq/_mq";
+@import "../../bower_components/guss-css3/_css3";
+@import "../../bower_components/guss-rem/_rem";
+@import "../../bower_components/guss-grid-system/_grid-system";
+@import "../../bower_components/guss-layout/_row";
+@import "../../bower_components/guss-layout/_columns";
+@import "../../bower_components/guss-webfonts/_webfonts";
+@import "../../bower_components/pasteup-palette/_palette";
 
 $guss-webfonts-base-url: '/bower_components/guss-webfonts/';
 $guss-webfonts-charset: 'original';
 $guss-webfonts-hinting: 'on';
 $guss-webfonts-kerning: 'on';
-@import "../bower_components/guss-typography/_typography";
+@import "../../bower_components/guss-typography/_typography";
 @include guss-webfonts();
 
 $c-brandBlue: guss-colour(guardian-brand, $pasteup-palette);

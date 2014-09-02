@@ -9,8 +9,10 @@ bower install
 
 # Development
 
-To watch sass and livereload changes, run
+Only edit files in `src`.
+
+To livereload scss and fragment files on changes, run
 
 ```
-npm run dev
+grunt dev
 ```
