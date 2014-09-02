@@ -10,6 +10,7 @@
     "tests"
   ],
   "devDependencies": {
-    "guss": "~3.2.0"
+    "guss": "~3.2.0",
+    "pasteup-palette": "~1.0.0"
   }
 }
