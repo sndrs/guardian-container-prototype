@@ -51,8 +51,6 @@ $c-liveAccent: guss-colour(tone-live-2, $pasteup-palette);
 $c-mediaDefault: $c-commentAccent;
 
 
-// just styles for dev display
-$item-width: gs-span(3);
 
 @import "item";
 @import "tone--live";

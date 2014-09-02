@@ -1,15 +1,20 @@
 
 $item-gutter: $gs-gutter * .25;
 $item-media-ratio: 3 / 5;
+$item-width: gs-span(3);
+$item-height: gs-height(6);
 
 .items {
 	@include box-sizing(border-box);
 	margin: 0;
 	padding: 0;
+	z-index: 2;
+
 
 	*, *:before, *:after {
 		@include box-sizing(inherit);
 		margin: 0;
+		z-index: inherit;
 	}
 
 	a {
@@ -17,6 +22,15 @@ $item-media-ratio: 3 / 5;
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+
+	// just for mockup
+	width: $item-width;
+	float: left;
+	margin-right: $gs-gutter * .5;
+	.item {
+		margin-bottom: $gs-baseline * .5;
+		min-height: $item-height;
 	}
 }
 
@@ -26,6 +40,14 @@ $item-media-ratio: 3 / 5;
 	list-style: none;
 	position: relative;
 	padding-bottom: $gs-baseline * 3;
+}
+
+.item__header {
+	min-height: $item-width * $item-media-ratio;
+
+	& > .item__media-container {
+		min-height: auto;
+	}
 }
 
 .item__media-container {
@@ -40,14 +62,12 @@ $item-media-ratio: 3 / 5;
 	}
 }
 
-.item__media-container--cutout {
-    margin-top: -40%; // Headline should resize if item--has-cutout is present on item
-    padding-bottom: 100%;
-
-    .item__image {
-        position: absolute;
-        bottom: 0;
-    }
+.item__image--cutout {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: gs-span(2.5);
+	z-index: 0;
 }
 
 .item__image {
@@ -86,11 +106,6 @@ $item-media-ratio: 3 / 5;
 
 .item__headline {
 	padding-top: $gs-baseline * .25;
-	min-height: $item-width * $item-media-ratio;
-
-	.item__media-container + & {
-		min-height: auto;
-	}
 }
 
 .item__standfirst {
@@ -100,7 +115,7 @@ $item-media-ratio: 3 / 5;
 
 .item__meta {
 	position: absolute;
-	bottom: $gs-baseline * .5;
+	bottom: 0;
 }
 
 .item__comment-count {
