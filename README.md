@@ -3,8 +3,8 @@
 clone and then run
 
 ```
-bower install
 npm install
+bower install
 ```
 
 # Development
