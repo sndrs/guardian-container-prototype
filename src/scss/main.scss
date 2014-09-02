@@ -46,7 +46,7 @@ $c-commentDark: #d3a034;
 
 $c-live: #c0031b;
 $c-liveDefault: guss-colour(tone-live-1, $pasteup-palette);
-$c-liveAccent: guss-colour(tone-live-2), $pasteup-palette;
+$c-liveAccent: guss-colour(tone-live-2, $pasteup-palette);
 
 $c-mediaDefault: $c-commentAccent;
 
@@ -55,6 +55,7 @@ $c-mediaDefault: $c-commentAccent;
 $item-width: gs-span(3);
 
 @import "item";
+@import "tone--live";
 
 body {
 	background-color: guss-colour(neutral-5, $pasteup-palette);
@@ -68,4 +69,8 @@ body {
 
 .item {
 	margin-bottom: $gs-baseline;
+}
+
+.annotation-header {
+    clear: both;
 }
