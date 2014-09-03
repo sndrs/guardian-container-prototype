@@ -52,9 +52,28 @@ $c-mediaDefault: $c-commentAccent;
 
 
 
-@import "item";
 
 body {
 	background-color: guss-colour(neutral-5, $pasteup-palette);
 }
+.items {
+		// just for mockup
+	margin-bottom: $gs-baseline;
+	&:before, &:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+	&:after {clear: both}
+	li {
+		margin-bottom: $gs-gutter * .5;
+		margin-right: $gs-gutter * .5;
+	}
+	li:not(.item) {
+		list-style: none;
+		@include fs-bodyHeading(2);
+		text-transform: capitalize;
+		width: gs-span(3)
+	}
+}
 
+@import "item";
