@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Item Card Demo</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<section class="container container--small-slow-4">
+	<ul class="items items--items-4 items--layout-m">
+		<li class="item__container">
+			include "item-image-headline"
+		</li>
+		<li class="item__container">
+			include "item-headline-standfirst"
+		</li>
+		<li class="item__container">
+			include "item-headline-cutout"
+		</li>
+		<li class="item__container">
+			include "item-image-kicker-headline"
+		</li>
+	</ul>
+</section>
+
+<section class="container container--small-slow-4">
+	<ul class="items items--items-4 items--layout-m">
+		<li class="item__container">
+			include "item-headlineBoosted-standfirst"
+		</li>
+		<li class="item__container">
+			include "item-headlineQuoted-byline-standfirst"
+		</li>
+		<li class="item__container">
+			include "item-kicker-headline-standfirst"
+		</li>
+		<li class="item__container">
+			include "item-kicker-headline-cutout"
+		</li>
+	</ul>
+</section>
+
+<section class="container container--small-slow-4">
+	<ul class="items items--items-4 items--layout-m">
+		<li class="item__container">
+			include "item-headlineBoosted-cutout"
+		</li>
+		<li class="item__container">
+			include "item-headlineQuoted-byline-cutout"
+		</li>
+		<li class="item__container">
+			include "item-kicker-headlineBoosted"
+		</li>
+		<li class="item__container">
+			include "item-headlineQuoted-byline-standfirst"
+		</li>
+	</ul>
+</section>
+
+<section class="container container--small-slow-4">
+	<ul class="items items--items-4 items--layout-m">
+		<li class="item__container">
+			include "item-headlineBoostedQuoted-byline"
+		</li>
+		<li class="item__container"></li>
+		<li class="item__container"></li>
+		<li class="item__container"></li>
+	</ul>
+</section>
+
+<script>
+	[].forEach.call(document.querySelectorAll('.item'), function (item) {
+	  	item.classList.add('item--live-blog');
+	});
+</script>
+
+</body>

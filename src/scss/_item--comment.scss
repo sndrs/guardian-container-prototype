@@ -1,0 +1,9 @@
+.item--comment {
+   @include item-tone((
+		bg: #e5e3dd,
+		headline: #262626,
+		accent: #dd5f25,
+		standfirst: #9e9c9a,
+		meta: #878787
+	));
+}

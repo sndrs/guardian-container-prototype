@@ -1,0 +1,17 @@
+.item--live-blog {
+   @include item-tone((
+		bg: #cb071e,
+		headline: #ffffff,
+		accent: #ebacae,
+		standfirst: #ebacae,
+		meta: #ebacae
+	));
+
+   .item__headline:before {
+   		content: '• Live';
+   		color: #cb071e;
+   		background-color: #ffffff;
+   		padding: .2ex .4ex 0;
+   		margin-left: -.2ex;
+	}
+}

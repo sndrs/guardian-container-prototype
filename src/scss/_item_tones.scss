@@ -1,0 +1,83 @@
+@import "tones";
+
+// DEFAULT ITEM COLOURS
+
+.item {
+	background-color: #ffffff;
+}
+
+.item__kicker,
+.item__byline a,
+.item__byline a:hover,
+.item__byline a:active,
+.item__byline a:visited {
+	color: $c-newsAccent;
+}
+
+.item__headline {
+	color: $c-neutral1;
+}
+
+.item__standfirst {
+	color: $c-neutral2;
+}
+
+.item__comment-count {
+	color: $c-neutral2;
+	background-color: fade-out(#ffffff, .3);
+}
+
+// TONAL ITEM COLOURS
+
+@mixin item-tone($colours) {
+	background-color: map-get($colours, bg);
+
+	.item__headline {
+		color: map-get($colours, headline);
+	}
+
+	.item__kicker,
+	.item__byline,
+	.item__byline:hover,
+	.item__byline:active,
+	.item__byline:visited {
+		color: map-get($colours, accent);
+	}
+
+	.item__standfirst {
+		color: map-get($colours, standfirst);
+	}
+
+	.item__comment-count {
+		color: map-get($colours, meta);
+		background-color: fade-out(map-get($colours, bg), .3);
+	}
+}
+
+.item--comment {
+   @include item-tone((
+		bg: #e5e3dd,
+		headline: #262626,
+		accent: #dd5f25,
+		standfirst: #9e9c9a,
+		meta: #878787
+	));
+}
+
+.item--live-blog {
+   @include item-tone((
+		bg: #cb071e,
+		headline: #ffffff,
+		accent: #ebacae,
+		standfirst: #ebacae,
+		meta: #ebacae
+	));
+
+   .item__headline:before {
+   		content: '• Live';
+   		color: #cb071e;
+   		background-color: #ffffff;
+   		padding: .2ex .4ex 0;
+   		margin-left: -.2ex;
+	}
+}

@@ -1,0 +1,38 @@
+// $browser-supports-flexbox: false;
+@include guss-row('.items', '.item__container');
+
+.container {
+	@include box-sizing(border-box);
+	width: 100%;
+	margin-bottom: $gs-baseline;
+	padding-top: $gs-baseline;
+
+	& + & {
+		border-top: 1px solid #deddd9;
+	}
+
+	*, *:before, *:after {
+		@include box-sizing(inherit);
+		margin: 0;
+	}
+}
+
+.item__container {
+	list-style: none;
+	@include flex-display;
+	padding-left: $gs-gutter * .5;
+	padding-right: $gs-gutter * .5;
+	min-height: gs-height(6);
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+
+	& + & {
+		border-left: 1px solid #deddd9;
+	}
+}

@@ -1,4 +1,4 @@
-@include guss-row('.items');
+
 
 $item-gutter: $gs-gutter * .25;
 $item-media-ratio: 3 / 5;
@@ -8,16 +8,14 @@ $item__cutout-width: gs-span(2);
 $item__cutout-height: gs-height(3);
 
 .items {
-	@include box-sizing(border-box);
-	margin: 0;
 	padding: 0;
-	z-index: 2;
+}
 
-	*, *:before, *:after {
-		@include box-sizing(inherit);
-		margin: 0;
-		z-index: inherit;
-	}
+
+// items
+.item {
+	position: relative;
+	padding-bottom: $gs-baseline * 3;
 
 	a {
 		text-decoration: none;
@@ -27,26 +25,22 @@ $item__cutout-height: gs-height(3);
 	}
 }
 
-.item {
-	background-color: #ffffff;
-	width: $item-width;
-	min-height: $item-height;
-	list-style: none;
-	position: relative;
-	padding-bottom: $gs-baseline * 3;
-}
-
-.item--has-cutout {
+.item--cutout {
 	padding-bottom: $item__cutout-height;
 }
 
+// item areas
+
 .item__header {
-	min-height: $item-width * $item-media-ratio;
+	padding-bottom: percentage($item-media-ratio);
+	height: 0;
 
 	& > .item__media-container {
 		min-height: auto;
 	}
 }
+
+// item elements
 
 .item__media-container {
 	position: relative;
@@ -61,6 +55,14 @@ $item__cutout-height: gs-height(3);
 	}
 }
 
+.item__image {
+	display: block;
+	height: auto;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
 .item__image--cutout {
 	position: absolute;
 	bottom: 0;
@@ -68,14 +70,6 @@ $item__cutout-height: gs-height(3);
 	width: $item__cutout-width;
 	height: $item__cutout-height;
 	z-index: 0;
-}
-
-.item__image {
-	display: block;
-	height: auto;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
 }
 
 .item__headline,
@@ -89,7 +83,7 @@ $item__cutout-height: gs-height(3);
 .item__byline {
 	@include fs-headline(3);
 
-	.item--headline-boosted & {
+	.item--headline-boost & {
 		@include fs-headline(4);
 	}
 }
@@ -98,21 +92,12 @@ $item__cutout-height: gs-height(3);
 	font-size: inherit;
 }
 
-.item__kicker,
-.item__byline a,
-.item__byline a:hover,
-.item__byline a:active,
-.item__byline a:visited {
-	color: $c-newsAccent;
-}
-
 .item__headline {
 	padding-top: $gs-baseline * .25;
 }
 
 .item__standfirst {
 	@include fs-bodyCopy(1);
-	color: $c-neutral2;
 }
 
 .item__meta {
@@ -122,7 +107,5 @@ $item__cutout-height: gs-height(3);
 
 .item__comment-count {
 	@include fs-textSans(3);
-	color: $c-neutral2;
-	background-color: fade-out(#ffffff, .3);
 	padding-right: 1ex;
 }

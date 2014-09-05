@@ -8,19 +8,22 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'src/scss',
 					src: ['*.scss'],
-					dest: 'css/',
+					dest: './app/css/',
 					ext: '.css'
 				}],
 				options: {
-					style: 'expanded'
+					style: 'compact',
+					sourcemap: 'none'
 				}
 			}
 		},
 		includes: {
 			files: {
-				src: ['src/*.html'],
-				dest: '.',
-				flatten: true
+				expand: true,
+				cwd: 'src',
+				src: ['*.html'],
+				dest: 'app',
+				flatten: false
 			},
 			options: {
 				silent: true,
@@ -30,11 +33,15 @@ module.exports = function(grunt) {
 		},
 		browserSync: {
 			bsFiles: {
-				src: ['css/*.css', '*.html']
+				src: 'app/**/*.*'
 			},
 			options: {
 				server: {
-					baseDir: "./"
+					baseDir: "./app",
+					directory: true,
+				    routes: {
+				        "/bower_components": "bower_components"
+				    }
 				},
 				watchTask: true,
 				xip: true
@@ -42,14 +49,14 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			fragments: {
-				files: ['./src/index.html', './src/fragments/**/*.*'],
+				files: ['./src/**/*.html'],
 				tasks: ['includes'],
 				options: {
 					spawn: false,
 				},
 			},
 			sass: {
-				files: ['./src/scss/**/*.*'],
+				files: ['./src/**/*.scss'],
 				tasks: ['sass'],
 				options: {
 					spawn: false,
@@ -58,5 +65,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('dev', ['sass', 'includes', 'browserSync', 'watch']);
+	grunt.registerTask('dev', ['includes', 'sass', 'browserSync', 'watch']);
 };

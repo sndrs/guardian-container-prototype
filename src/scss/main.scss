@@ -10,7 +10,7 @@
 @import "../../bower_components/pasteup-palette/_palette";
 @import "../../bower_components/guss-colours/_colours";
 
-$guss-webfonts-base-url: '/bower_components/guss-webfonts/';
+$guss-webfonts-base-url: '../bower_components/guss-webfonts/';
 $guss-webfonts-charset: 'original';
 $guss-webfonts-hinting: 'on';
 $guss-webfonts-kerning: 'on';
@@ -54,21 +54,12 @@ $c-mediaDefault: $c-commentAccent;
 
 
 body {
-	background-color: guss-colour(neutral-5, $pasteup-palette);
+	background-color: #f4f4f4;
 }
 .items {
 		// just for mockup
-	margin-bottom: $gs-baseline;
-	&:before, &:after {
-	    content: " "; /* 1 */
-	    display: table; /* 2 */
-	}
-	&:after {clear: both}
-	li {
-		margin-bottom: $gs-gutter * .5;
-		margin-right: $gs-gutter * .5;
-	}
-	li:not(.item) {
+
+	li:not(.item__container) {
 		list-style: none;
 		@include fs-bodyHeading(2);
 		text-transform: capitalize;
@@ -77,3 +68,7 @@ body {
 }
 
 @import "item";
+@import "item_tones";
+
+@import "container";
+@import "container--ss4";
