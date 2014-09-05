@@ -94,14 +94,12 @@ $item__cutout-height: gs-height(3);
 
 .item__headline {
 	padding-top: $gs-baseline * .25;
-	
+
 	&.item__headline--quote::before {
         content: "\0022";
         color: $c-neutral2;
     }
 }
-
-.item__headline
 
 .item__standfirst {
 	@include fs-bodyCopy(1);

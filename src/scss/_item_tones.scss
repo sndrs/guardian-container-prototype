@@ -1,5 +1,3 @@
-@import "tones";
-
 // DEFAULT ITEM COLOURS
 
 .item {
@@ -7,10 +5,10 @@
 }
 
 .item__kicker,
-.item__byline a,
-.item__byline a:hover,
-.item__byline a:active,
-.item__byline a:visited {
+.item__byline,
+.item__byline:hover,
+.item__byline:active,
+.item__byline:visited {
 	color: $c-newsAccent;
 }
 
