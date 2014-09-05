@@ -95,9 +95,18 @@ $item__cutout-height: gs-height(3);
 .item__headline {
 	padding-top: $gs-baseline * .25;
 
-	&.item__headline--quote::before {
-        content: "\0022";
-        color: $c-neutral2;
+	.item--headline-quote &:before {
+		height: 15px;
+		width: 17px;
+		display: inline-block;
+		content: '';
+        background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyMCI+PHBhdGggZmlsbD0iIzc2NzY3NiIgZD0iTTcuNyAxMC43YzMgMS4yIDMuOSA1LjMgMS43IDcuNi0yLjIgMi40LTYuMSAyLjEtOC0uNC0yLjItMi44LTEuMy02LjYuMi05LjYgMS42LTMuMSA0LjEtNS45IDcuMS03LjdsLjYuNi02LjUgOS44LjIuMmMxLjMtMSAzLjEtMS4xIDQuNy0uNXptMTAuMS0uNGMzLjQgMCA1LjkgMy43IDQuNCA2LjgtMS41IDMuMi02IDMuOC04LjQgMS4zLTIuNi0yLjctMS44LTYuNy0uNC05LjggMS42LTMuMiA0LjItNi4yIDcuMi04bC42LjYtNi40IDkuOC4yLjJjLjgtLjYgMS44LS45IDIuOC0uOXoiLz48L3N2Zz4=);
+        background-size: cover;
+    }
+
+    .item--headline-boost.item--headline-quote &:before {
+		height: 18px;
+		width: 21px;
     }
 }
 
