@@ -29,17 +29,6 @@ $item__cutout-height: gs-height(3);
 	padding-bottom: $item__cutout-height;
 }
 
-// item areas
-
-.item__header {
-	padding-bottom: percentage($item-media-ratio);
-	height: 0;
-
-	& > .item__media-container {
-		min-height: auto;
-	}
-}
-
 // item elements
 
 .item__media-container {
@@ -112,6 +101,7 @@ $item__cutout-height: gs-height(3);
 
 .item__standfirst {
 	@include fs-bodyCopy(1);
+	margin-top: $gs-baseline;
 }
 
 .item__meta {
