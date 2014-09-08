@@ -35,6 +35,18 @@
 	& + & {
 		border-left: 1px solid #deddd9;
 	}
+
+	@include mq($until: tablet) {
+		padding-bottom: $gs-baseline;
+		&:nth-child(even) {
+			padding-right: 0;
+		}
+		&:nth-child(odd) {
+			padding-left: 0;
+			border-left: 0;
+		}
+	}
+
 	.item {
 		@include flex(1);
 	}
