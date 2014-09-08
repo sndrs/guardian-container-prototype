@@ -35,4 +35,7 @@
 	& + & {
 		border-left: 1px solid #deddd9;
 	}
+	.item {
+		@include flex(1);
+	}
 }
