@@ -22,7 +22,6 @@
 	@include flex-display;
 	padding-left: $gs-gutter * .5;
 	padding-right: $gs-gutter * .5;
-	min-height: gs-height(6);
 
 	&:first-child {
 		padding-left: 0;
